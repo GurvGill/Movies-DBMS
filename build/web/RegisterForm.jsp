@@ -17,6 +17,7 @@
             {
                 var password = document.forms["RegisterForm"]["password"].value;
                 var c_password = document.forms["RegisterForm"]["c_password"].value;
+                var email = document.forms["RegisterForm"]["email"].value;
                 if(password != c_password)
                 {
                     alert("Passwords do not match.");

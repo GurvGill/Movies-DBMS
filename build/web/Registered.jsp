@@ -24,7 +24,7 @@
                     try{
                      moviesdatabase db = new moviesdatabase();
                      Connection con = db.getConnection();
-                     insertAccounts = con.prepareStatement("INSERT INTO Accounts (email, first_name, last_name, time)" + " VALUES (?, ?, ?, ?)");
+                     insertAccounts = con.prepareStatement("INSERT INTO Accounts (email, first_name, last_name, password, time)" + " VALUES (?, ?, ?, ?, ?)");
                     }catch(SQLException e)
                     {
                         e.printStackTrace();
@@ -68,12 +68,13 @@
                     alert("Registration was successful.");
                 </script>
                <%      
+            }else if(result == 0){
+                %>
+                <script>
+                    alert("Unable to register.");
+                </script>
+                <%
             }
-            %>
-            <script>
-                alert("Unable to register.");
-            </script>
-           <% 
         %>
     </body>
 </html>

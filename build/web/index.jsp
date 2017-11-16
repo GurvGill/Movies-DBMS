@@ -17,5 +17,7 @@
         <a href="QueryForm.jsp">Query</a>
         <br>
         <a href="RegisterForm.jsp">Register</a>
+        <br>
+        <a href="LoginForm.jsp">Login</a>
     </body>
 </html>
