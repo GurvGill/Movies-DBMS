@@ -28,7 +28,7 @@
     </head>
     <body>
         <h1>Register for an account</h1>
-        <form name="RegisterForm" action="Registered.jsp" onsubmit="return check()" method="POST">           
+        <form name="RegisterForm" action="Registering.jsp" onsubmit="return check()" method="POST">           
             <table border="0">
                 <tbody>
                     <tr>

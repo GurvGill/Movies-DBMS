@@ -13,20 +13,19 @@
     </head>
     <body>
         <h1>Log into your account</h1>
-        <form name="LoginForm" action="LoggedInUser.jsp">
+        <form name="LoginForm" action="LoggingIn.jsp">
             <table border="0">
                 <tbody>
                     <tr>
                         <td>Email: </td>
-                        <td><input type="text" name="email" value="" /></td>
+                        <td><input type="email" name="email" value="" /></td>
                     </tr>
                     <tr>
                         <td>Password: </td>
                         <td><input type="password" name="password" value="" /></td>
                     </tr>
                 </tbody>
-            </table>
-
+            </table><input type="submit" value="Log In" name="login" />
         </form>
     </body>
 </html>

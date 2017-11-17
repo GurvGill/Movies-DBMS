@@ -24,6 +24,7 @@
                     try{
                      moviesdatabase db = new moviesdatabase();
                      Connection con = db.getConnection();
+                     Statement statement = con.createStatement();
                      insertAccounts = con.prepareStatement("INSERT INTO Accounts (email, first_name, last_name, password, time)" + " VALUES (?, ?, ?, ?, ?)");
                     }catch(SQLException e)
                     {
@@ -48,6 +49,24 @@
                 }   
                 
             }
+            
+            public int UniqueEmail(String email)
+            {
+                int result = 0;
+                try{
+                    moviesdatabase db = new moviesdatabase();
+                    Connection con = db.getConnection();
+                    Statement statement = con.createStatement();
+                    ResultSet rs = statement.executeQuery("select email from Accounts where email = '" + email + "'");
+                    if(rs.next())
+                    {
+                        result = 1;
+                    }
+                }catch(SQLException e){
+                    e.printStackTrace();
+                }
+                return result;
+            }
         %>
         <%
             int result = 0;
@@ -58,23 +77,35 @@
             
             Date date = new Date();
             Timestamp time = new Timestamp(date.getTime());
-            
-            Accounts accounts = new Accounts();
-            result = accounts.setAccount(email, first_name, last_name, password, time);  
-            if(result != 0)
-            {
+            if(UniqueEmail(email) == 0)
+            {  
+                Accounts accounts = new Accounts();
+                result = accounts.setAccount(email, first_name, last_name, password, time);
+                
+                if(result != 0)
+                {
+                    %>
+                    <script>
+                        alert("Registration was successful.");
+                    </script>
+                    <jsp:include page="LoggedInUser.jsp"/>
+                   <%      
+                }else if(result == 0){
+                    %>
+                    <script>
+                        alert("Unable to register.");
+                    </script>
+                    <jsp:include page="RegisterForm.jsp"/>
+                    <%
+                } 
+            }else{
                 %>
                 <script>
-                    alert("Registration was successful.");
+                    alert("Email is already taken. Please re-enter information.");
                 </script>
-               <%      
-            }else if(result == 0){
-                %>
-                <script>
-                    alert("Unable to register.");
-                </script>
+                <jsp:include page="RegisterForm.jsp"/>
                 <%
-            }
+            }          
         %>
     </body>
 </html>
