@@ -6,18 +6,35 @@
 <%@page import="java.sql.*"%>
 <%@page import="moviesapp.moviesdatabase"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
+<link type = "text/css" rel ="stylesheet" href="CSS/index.css" > 
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Movie DBMS</title>
-    </head>
-    <body>
-        <h1>Movie Database Application</h1>
+
+        <%-- nav bar in index page --%>
+    <div class="topnav" id="myTopnav">
+        <a class="active" href="index.jsp">Home</a>
+        <!--        <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>-->
+
+        <a href="RegisterForm.jsp">Register</a>        
         <a href="QueryForm.jsp">Query</a>
-        <br>
-        <a href="RegisterForm.jsp">Register</a>
-        <br>
         <a href="LoginForm.jsp">Login</a>
-    </body>
+
+    </div>
+</head>
+
+<body>
+
+    <h1 class = "header">Welcome to our Movie Database Application</h1>
+
+
+</body>
+
+
 </html>
