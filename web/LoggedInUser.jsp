@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <link type = "text/css" rel ="stylesheet" href="CSS/index.css" > 
 
 <html>
@@ -17,6 +18,12 @@
         <a href="QueryForm.jsp">Query</a>
         <a href="LogOut.jsp">Log out</a>
     </div>
+=======
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+>>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
     </head>
     <body>
         <h1>Hello World!</h1>

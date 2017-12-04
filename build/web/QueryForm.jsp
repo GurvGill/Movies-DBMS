@@ -15,9 +15,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Query Page</title>
     <div class="topnav" id="myTopnav">
+<<<<<<< HEAD
         <a href="index.jsp">Home</a>  
         <a href="RegisterForm.jsp">Register</a>        
         <a class="active" href="QueryForm.jsp">Query</a>
+=======
+        <a class="active" href="index.jsp">Home</a>
+        <!--        <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>-->
+
+        <a href="RegisterForm.jsp">Register</a>        
+        <a href="QueryForm.jsp">Query</a>
+>>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
         <a href="LoginForm.jsp">Login</a>
 
     </div>

@@ -18,6 +18,13 @@
         <%-- nav bar in index page --%>
     <div class="topnav" id="myTopnav">
         <a class="active" href="index.jsp">Home</a>
+<<<<<<< HEAD
+=======
+        <!--        <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>-->
+
+>>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
         <a href="RegisterForm.jsp">Register</a>        
         <a href="QueryForm.jsp">Query</a>
         <a href="LoginForm.jsp">Login</a>

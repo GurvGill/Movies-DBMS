@@ -15,10 +15,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register Page</title>
          <div class="topnav" id="myTopnav">
+<<<<<<< HEAD
         <a href="index.jsp">Home</a>
         <a class="active" href="RegisterForm.jsp">Register</a>        
         <a href="QueryForm.jsp">Query</a>
         <a href="LoginForm.jsp">Login</a>
+=======
+        <a class="active" href="index.jsp">Home</a>
+        <!--        <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>-->
+
+        <a href="RegisterForm.jsp">Register</a>        
+        <a href="QueryForm.jsp">Query</a>
+        <a href="LoginForm.jsp">Login</a>
+
+>>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
     </div>
         <script>
             function check()
