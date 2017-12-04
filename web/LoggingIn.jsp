@@ -7,10 +7,7 @@
 <%@page import="java.sql.*"%>
 <%@page import="moviesapp.moviesdatabase"%>
 <%@page import="moviesapp.Accounts"%>
-<<<<<<< HEAD
 <%@page import="moviesapp.User"%>
-=======
->>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -25,13 +22,10 @@
             String password = request.getParameter("password");
             
             Accounts accounts = new Accounts();
-<<<<<<< HEAD
+
             User user = new User();
             user = accounts.FindUser(email, password);
             if(user != null)
-=======
-            if(accounts.FindUser(email, password))
->>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
             {    
                 %>
                 <script>

@@ -15,22 +15,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Results Page</title>
     <div class="topnav" id="myTopnav">
-<<<<<<< HEAD
         <a href="index.jsp">Home</a>
         <a href="RegisterForm.jsp">Register</a>        
-        <a class="active" href="QueryForm.jsp">Query</a>
+        <a class="active" href="QueryForm.jsp">Search</a>
         <a href="LoginForm.jsp">Login</a>
-=======
-        <a class="active" href="index.jsp">Home</a>
-        <!--        <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>-->
-
-        <a href="RegisterForm.jsp">Register</a>        
-        <a href="QueryForm.jsp">Query</a>
-        <a href="LoginForm.jsp">Login</a>
-
->>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
     </div>
 
 </head>
@@ -44,7 +32,7 @@
         ResultSet rs = statement.executeQuery("select " + column_name + " from " + table_name);
         if (column_name.equals("*")) {
             while (rs.next()) {
-                out.println(rs.getInt(1) + " " + rs.getString("title") + " " + rs.getString("year"));
+                out.println(rs.getString("title") + " " + rs.getString("year") + " " + rs.getString("trailer_url") + " " + rs.getString("rating") + " " + rs.getString("genre") + " " + rs.getString("length"));
     %>
     <br>
     <%

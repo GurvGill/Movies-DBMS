@@ -15,36 +15,35 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Query Page</title>
     <div class="topnav" id="myTopnav">
-<<<<<<< HEAD
         <a href="index.jsp">Home</a>  
         <a href="RegisterForm.jsp">Register</a>        
-        <a class="active" href="QueryForm.jsp">Query</a>
-=======
-        <a class="active" href="index.jsp">Home</a>
-        <!--        <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>-->
-
-        <a href="RegisterForm.jsp">Register</a>        
-        <a href="QueryForm.jsp">Query</a>
->>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
+        <a class="active" href="QueryForm.jsp">Search</a>
         <a href="LoginForm.jsp">Login</a>
 
     </div>
 </head>
 <body>
-    <h1> Query database </h1>
+    <h1> Search database </h1>
     <form name="QueryForm" action="Query.jsp">
         <table>
             <tbody>
                 <tr>
-                    <td>Column Name: </td>
+                    <td>Enter keyword: </td>
                     <td><input type="text" name="column_name" value="" /></td>
                 </tr>
                 <tr>
-                    <td>Table Name: </td>
-                    <td><input type="text" name="table_name" value="" /></td>
-                </tr>
+                    <td>Select category: </td>
+                    <td>
+                    <select name="table_name">
+                        <option>Actors</option>
+                        <option>Directors</option>
+                        <option>Genres</option>
+                        <option>Movies</option>
+                        <option>Producers</option>               
+                        <option>Theaters</option>
+                    </select>
+                    </td>
+            </tr>
             </tbody>
         </table>
         <input type="reset" value="Reset" name="reset" />

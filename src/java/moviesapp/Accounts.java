@@ -58,20 +58,14 @@ public class Accounts{
         }
         return result;
     } 
-<<<<<<< HEAD
+
     public User FindUser(String email, String password)
     {
         User result = null;
-=======
-    public boolean FindUser(String email, String password)
-    {
-        boolean result = false;
->>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
         try{
             moviesdatabase db = new moviesdatabase();
             Connection con = db.getConnection();
             Statement statement = con.createStatement();
-<<<<<<< HEAD
             ResultSet rs = statement.executeQuery("select * from Accounts where email = '" + email + "'");
             while(rs.next())
             {
@@ -84,13 +78,6 @@ public class Accounts{
                     user.last_name = rs.getString("last_name");
                     result = user;
                 }
-=======
-            ResultSet rs = statement.executeQuery("select email,password from Accounts where email = '" + email + "'");
-            while(rs.next())
-            {
-                if(rs.getString("email").equals(email) && rs.getString("password").equals(password))
-                    return true; 
->>>>>>> 9b53cff6cca1ccd55d05acfb0c6b8c1dec19240e
             }
         }catch(SQLException e){
             e.printStackTrace();
