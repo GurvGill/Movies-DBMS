@@ -16,8 +16,7 @@
         <title>Register Page</title>
          <div class="topnav" id="myTopnav">
         <a href="index.jsp">Home</a>
-        <a class="active" href="RegisterForm.jsp">Register</a>        
-        <a href="QueryForm.jsp">Search</a>
+        <a class="active" href="RegisterForm.jsp">Register</a>
         <a href="LoginForm.jsp">Login</a>
     </div>
         <script>

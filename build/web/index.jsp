@@ -18,8 +18,7 @@
         <%-- nav bar in index page --%>
     <div class="topnav" id="myTopnav">
         <a class="active" href="index.jsp">Home</a>
-        <a href="RegisterForm.jsp">Register</a>        
-        <a href="QueryForm.jsp">Search</a>
+        <a href="RegisterForm.jsp">Register</a>
         <a href="LoginForm.jsp">Login</a>
 
     </div>

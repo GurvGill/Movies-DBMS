@@ -15,11 +15,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Query Page</title>
     <div class="topnav" id="myTopnav">
-        <a href="index.jsp">Home</a>  
-        <a href="RegisterForm.jsp">Register</a>        
+        <a href="index.jsp">Home</a>       
         <a class="active" href="QueryForm.jsp">Search</a>
-        <a href="LoginForm.jsp">Login</a>
-
+        <a href="LogOut.jsp">Log out</a>
     </div>
 </head>
 <body>
