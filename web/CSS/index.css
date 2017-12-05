@@ -53,4 +53,6 @@ and open the template in the editor.
 /*  sets the back ground to the image */
 body {
     background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg")no-repeat center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
