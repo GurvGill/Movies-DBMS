@@ -16,6 +16,7 @@
         <title>Query Page</title>
     <div class="topnav" id="myTopnav">
         <a href="index.jsp">Home</a>       
+        <a href="Profile.jsp">Profile</a>
         <a class="active" href="QueryForm.jsp">Search</a>
         <a href="LogOut.jsp">Log out</a>
     </div>

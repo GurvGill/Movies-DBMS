@@ -14,11 +14,12 @@
         <title>Profile Page</title>
          <div class="topnav" id="myTopnav">
         <a href="index.jsp">Home</a>       
+        <a class="active" href="Profile.jsp">Profile</a>
         <a href="QueryForm.jsp">Search</a>
-        <a href="LogOut.jsp">Log out</a>
+        <a href="LogOut.jsp">Log out</a>   
     </div>
     </head>
     <body>
-        <h1>Hello World!</h1>
+    
     </body>
 </html>
