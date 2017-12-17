@@ -42,7 +42,6 @@
                 while (rs2.next()) {
                     review_id = ""+rs2.getInt("Review_id");
                 }
-                out.print(review_id);
                 
                 PreparedStatement insertReviewandAccount = con.prepareStatement("INSERT INTO Accounts_has_Reviews (Accounts_id, Review_id)" + " VALUES (?,?)");
                 insertReviewandAccount.setString(1,""+user.id);
@@ -65,9 +64,43 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Movie DBMS</title>
     </head>
+    <center>
     <body>
-        <h1></h1>
+        <h1>Review <%=title%></h1>
+        <table border="1">
+        <tbody>
+            <tr>
+                <td>Title: </td>
+                <td><%=title%></td>
+            </tr>
+            <tr>
+                <td>Year of Release: </td>
+                <td><%=year%></td>
+            </tr>
+            <tr>
+                <td>Trailer URL: </td>
+                <td><a href=<%=trailer_url%>><%=trailer_url%></a></td>
+            </tr>
+            <tr>
+                <td>Rating: </td>
+                <td><%=rating%></td>
+            </tr>
+            <tr>
+                <td>Genre: </td>
+                <td><%=genre%></td>
+            </tr>
+            <tr>
+                <td> Length: </td>
+                <td><%=length%></td>
+            </tr>
+            <tr>
+                <td> Review: </td>
+                <td><%=review%></td>
+            </tr>
+        </tbody>
+    </table>
     </body>
+    </center>
     <%
     }catch(SQLException e)
             {
