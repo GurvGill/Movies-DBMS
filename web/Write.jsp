@@ -32,8 +32,9 @@
                     genre = rs.getString("genre");
                     length = rs.getString("length");
                 } 
-                PreparedStatement insertReview = con.prepareStatement("INSERT INTO Reviews (Review)" + " VALUES (?)");
+                PreparedStatement insertReview = con.prepareStatement("INSERT INTO Reviews (Review, Movie_id)" + " VALUES (?,?)");
                 insertReview.setString(1,review);
+                insertReview.setString(2,movie_id);
                 insertReview.executeUpdate();
                 
                 String review_id = null;

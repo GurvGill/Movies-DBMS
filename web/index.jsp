@@ -88,7 +88,7 @@
             </tr>
             <tr>
                 <td>Save or Review: </td>
-                <td> To save or review Register for an account or log in to your account
+                <td> To view reviews and save or review Register for an account or log in to your account
                     <br>
                 <button/> <a class = "button" href="RegisterForm.jsp"/>Register</a></button> 
                 <button/> <a class = "button" href="LoginForm.jsp"/>Log in</a></button> 
@@ -98,6 +98,9 @@
             <br>
     <%}
     if(user.email != null){
+    String movie_id = ""+rs.getInt("id");
+    Statement s = con.createStatement();
+    ResultSet r = s.executeQuery("select * from Accounts, Reviews, Movies, MovieReviews, Accounts_has_Reviews where Accounts.id = Accounts_has_Reviews.Accounts_id and Accounts_has_Reviews.Review_id = Reviews.Review_id and Reviews.Review_id = MovieReviews.Review_id and Movies.id = MovieReviews.Movies_id and MovieReviews.Movies_id = '" + movie_id + "'order by Reviews.Review_id desc limit 3");
     %>  
     <table border="1">
         <tbody>
@@ -125,6 +128,21 @@
                 <td> Length: </td>
                 <td><%out.println(rs.getString("length")); %></td>
             </tr>
+            <tr>
+                <td> Most recent reviews: </td>
+                <td> </td>
+            </tr>
+                <%
+                    while(r.next())
+                    {
+                        %>
+                        <tr>
+                            <td><%out.println("Reviewer: "+ r.getString("first_name") + " " + r.getString("last_name"));%></td>
+                            <td><%out.println("Review: " + r.getString("Review"));%> </td>
+                        </tr>
+                        <%
+                    }
+                %>
             <tr>
                 <td>Save or Review: </td>
                 <td> 

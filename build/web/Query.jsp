@@ -3,10 +3,10 @@
     Created on : Nov 2, 2017, 12:13:54 AM
     Author     : gurvir
 --%>
-
-
 <%@page import="java.sql.*"%>
 <%@page import="moviesapp.moviesdatabase"%>
+<%@page import="moviesapp.Accounts"%>
+<%@page import="moviesapp.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <link type = "text/css" rel ="stylesheet" href="CSS/index1.css" > 
@@ -25,6 +25,7 @@
         <a href="LogOut.jsp">Log out</a>
     </div>
 </head>
+<center>
 <body>
     <%
         moviesdatabase db = new moviesdatabase();
@@ -37,7 +38,10 @@
             ResultSet rs = statement.executeQuery("select " + column_name + " from " + table_name);
             if (column_name.equals("*") && table_name.equals("Movies")) {
                 while (rs.next()) {
-    %>
+                    String movie_id = ""+rs.getInt("id");
+                    Statement s = con.createStatement();
+                    ResultSet r = s.executeQuery("select * from Accounts, Reviews, Movies, MovieReviews, Accounts_has_Reviews where Accounts.id = Accounts_has_Reviews.Accounts_id and Accounts_has_Reviews.Review_id = Reviews.Review_id and Reviews.Review_id = MovieReviews.Review_id and Movies.id = MovieReviews.Movies_id and MovieReviews.Movies_id = '" + movie_id + "'order by Reviews.Review_id desc limit 3");
+    %> 
     <table border="1">
         <tbody>
             <tr>
@@ -63,6 +67,28 @@
             <tr>
                 <td> Length: </td>
                 <td><%out.println(rs.getString("length")); %></td>
+            </tr>
+            <tr>
+                <td> Most recent reviews: </td>
+                <td> </td>
+            </tr>
+                <%
+                    while(r.next())
+                    {
+                        %>
+                        <tr>
+                            <td><%out.println("Reviewer: "+ r.getString("first_name") + " " + r.getString("last_name"));%></td>
+                            <td><%out.println("Review: " + r.getString("Review"));%> </td>
+                        </tr>
+                        <%
+                    }
+                %>
+            <tr>
+            <tr>
+                <td>Save or Review: </td>
+                <td> 
+                <button/> <a class = "button" href="Save.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Save</a></button> 
+                <button/> <a class = "button" href="AddReview.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Add Review</a></button> </td>
             </tr>
         </tbody>
     </table>
@@ -121,14 +147,74 @@
         }
     } else {
         while (rs.next()) {
-            out.println("INSIDE THE LAST ELSE");
             out.println(rs.getString(column_name));
     %>
     <br>
     <%
             }
         }
-    } else {
+    } else if(table_name.equals("Movies")){ 
+    ResultSet rs = statement.executeQuery("select * from " + table_name + " where title = '" + column_name + "'");
+    while(rs.next()){    
+        String movie_id = ""+rs.getInt("id");
+        Statement s = con.createStatement();
+        ResultSet r = s.executeQuery("select * from Accounts, Reviews, Movies, MovieReviews, Accounts_has_Reviews where Accounts.id = Accounts_has_Reviews.Accounts_id and Accounts_has_Reviews.Review_id = Reviews.Review_id and Reviews.Review_id = MovieReviews.Review_id and Movies.id = MovieReviews.Movies_id and MovieReviews.Movies_id = '" + movie_id + "'order by Reviews.Review_id desc limit 3");
+    
+    %> 
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Title: </td>
+                <td><%out.println(rs.getString("title")); %></td>
+            </tr>
+            <tr>
+                <td>Year of Release: </td>
+                <td><%out.println(rs.getString("year")); %></td>
+            </tr>
+            <tr>
+                <td>Trailer URL: </td>
+                <td><a href=<%out.println(rs.getString("trailer_url")); %>><%out.println(rs.getString("trailer_url")); %></a></td>
+            </tr>
+            <tr>
+                <td>Rating: </td>
+                <td><%out.println(rs.getString("rating")); %></td>
+            </tr>
+            <tr>
+                <td>Genre: </td>
+                <td><%out.println(rs.getString("genre")); %></td>
+            </tr>
+            <tr>
+                <td> Length: </td>
+                <td><%out.println(rs.getString("length")); %></td>
+            </tr>
+            <tr>
+                <td> Most recent reviews: </td>
+                <td> </td>
+            </tr>
+                <%
+                    while(r.next())
+                    {
+                        %>
+                        <tr>
+                            <td><%out.println("Reviewer: "+ r.getString("first_name") + " " + r.getString("last_name"));%></td>
+                            <td><%out.println("Review: " + r.getString("Review"));%> </td>
+                        </tr>
+                        <%
+                    }
+                %>
+            <tr>
+            <tr>
+                <td>Save or Review: </td>
+                <td> 
+                <button/> <a class = "button" href="Save.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Save</a></button> 
+                <button/> <a class = "button" href="AddReview.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Add Review</a></button> </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>           
+    <%}
+    
+    }else{
 
         ResultSet rs = statement.executeQuery("select * from " + table_name + " where first_name = '" + column_name + "'");
         while (rs.next()) {
@@ -158,4 +244,5 @@
         con.close();
     %>
 </body>
+</center>
 </html>
