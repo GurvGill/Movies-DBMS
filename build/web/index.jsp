@@ -128,8 +128,8 @@
             <tr>
                 <td>Save or Review: </td>
                 <td> 
-                <button/> <a class = "button" href="Save.jsp"/>Save</a></button> 
-                <button/> <a class = "button" href="AddReview.jsp?movie_id=<%=rs.getInt("id")%>"/>Add Review</a></button> </td>
+                <button/> <a class = "button" href="Save.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Save</a></button> 
+                <button/> <a class = "button" href="AddReview.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Add Review</a></button> </td>
             </tr>
         </tbody>
     </table>

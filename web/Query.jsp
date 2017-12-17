@@ -13,15 +13,17 @@
 
 <html>
     <head>
+        <%
+            User user = User.getUser(request.getParameter("email"));
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Results</title>
     <div class="topnav" id="myTopnav">
-        <a href="index.jsp">Home</a>    
-        <a href="LoggedInUser.jsp">Profile</a>s
-        <a class="active" href="QueryForm.jsp">Search</a>
+        <a href="index.jsp?email=<%=user.email%>">Home</a>       
+        <a href="LoggedInUser.jsp?email=<%=user.email%>">Profile</a>
+        <a class="active" href="QueryForm.jsp?email=<%=user.email%>">Search</a>
         <a href="LogOut.jsp">Log out</a>
     </div>
-
 </head>
 <body>
     <%
@@ -128,7 +130,6 @@
         }
     } else {
 
-//        WORKS FOR DIRECTOR, ACTORS AND PRODUCERS searchers DB with the FIRST name and returns a result if found 
         ResultSet rs = statement.executeQuery("select * from " + table_name + " where first_name = '" + column_name + "'");
         while (rs.next()) {
     %>  
