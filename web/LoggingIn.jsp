@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Movies DBMS</title>
     </head>
     <body>
         <%
@@ -31,7 +31,9 @@
                 <script>
                     alert("Log in was successful.");
                 </script>
-                <jsp:include page="LoggedInUser.jsp"/>
+                <jsp:include page="LoggedInUser.jsp">
+                    <jsp:param name="email" value="<%=user.email%>"/>
+                </jsp:include>
                <%      
             }else{
                 %>

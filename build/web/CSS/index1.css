@@ -55,4 +55,10 @@ body {
     background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg")no-repeat center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
+}
+
+.button {
+    color: black;
+    text-decoration: none;
 }

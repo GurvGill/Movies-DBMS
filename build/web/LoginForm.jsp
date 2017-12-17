@@ -6,18 +6,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link type = "text/css" rel ="stylesheet" href="CSS/index.css" > 
+<link type = "text/css" rel ="stylesheet" href="CSS/index1.css" > 
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <title>Login</title>
          <div class="topnav" id="myTopnav">
         <a href="index.jsp">Home</a>
         <a href="RegisterForm.jsp">Register</a> 
         <a class="active" href="LoginForm.jsp">Login</a>
     </div>
     </head>
+    <center>
     <body>
         <h1>Log into your account</h1>
         <form name="LoginForm" action="LoggingIn.jsp">
@@ -35,4 +36,5 @@
             </table><input type="submit" value="Log In" name="login" />
         </form>
     </body>
+    </center>
 </html>

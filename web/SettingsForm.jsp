@@ -1,6 +1,6 @@
 <%-- 
-    Document   : LoggedInUser
-    Created on : Nov 16, 2017, 9:39:56 PM
+    Document   : Settings
+    Created on : Dec 15, 2017, 8:32:23 PM
     Author     : gurvir
 --%>
 
@@ -15,7 +15,7 @@
             User user = new User(request.getParameter("email"));
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%=user.first_name%>'s Profile</title>
+        <title><%=user.first_name%>'s Settings</title>     
 
          <div class="topnav" id="myTopnav">
         <a href="index.jsp?email=<%=user.email%>">Home</a>       
@@ -25,27 +25,31 @@
     </div>
     </head>
     <center>
-    <body>
+     <body>
         <h1> Welcome, <%=user.first_name + " " + user.last_name %> </h1>
-        <form name="SettingsForm" action="SettingsForm.jsp">
+    <form name="SettingsForm" action="Settings.jsp">
         <table border="0">
             <tbody>
                 <tr>
                     <td>Email:</td>
-                    <td> <%=user.email%> </td>
+                    <td><input type="text" name="column_name" value="<%=user.email%>"</td>
                 </tr>
                 <tr>
                     <td>First Name:</td>
-                    <td><%=user.first_name%></td>
+                    <td><input type="text" name="column_name" value="<%=user.first_name%>"</td>
                 </tr>
                 <tr>
                     <td>Last Name:</td>
-                    <td><%=user.last_name%></td>
+                    <td><input type="text" name="column_name" value="<%=user.last_name%>"</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="column_name" value="<%=user.password%>"</td>
                 </tr>
             </tbody>
         </table>
-        <a href="SettingsForm.jsp?email=<%=user.email%>">Edit Settings</a>
-        <a href="ConfirmDelete.jsp?email=<%=user.email%>">Delete my Account</a>
+        <input type="reset" value="Reset" name="reset" />
+        <input type="submit" value="Submit" name="submit" />
         </form>
     </body>
     </center>

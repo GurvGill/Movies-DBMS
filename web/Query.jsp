@@ -9,15 +9,15 @@
 <%@page import="moviesapp.moviesdatabase"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link type = "text/css" rel ="stylesheet" href="CSS/index.css" > 
+<link type = "text/css" rel ="stylesheet" href="CSS/index1.css" > 
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Results Page</title>
+        <title>Results</title>
     <div class="topnav" id="myTopnav">
         <a href="index.jsp">Home</a>    
-        <a href="Profile.jsp">Profile</a>
+        <a href="LoggedInUser.jsp">Profile</a>s
         <a class="active" href="QueryForm.jsp">Search</a>
         <a href="LogOut.jsp">Log out</a>
     </div>

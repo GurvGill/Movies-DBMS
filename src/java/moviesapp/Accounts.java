@@ -72,6 +72,7 @@ public class Accounts{
                 if(rs.getString("email").equals(email) && rs.getString("password").equals(password))
                 {
                     User user = new User();
+                    user.id = rs.getInt("id");
                     user.email = rs.getString("email");
                     user.password = rs.getString("password");
                     user.first_name = rs.getString("first_name");
@@ -83,5 +84,6 @@ public class Accounts{
             e.printStackTrace();
         }
         return result;
-    }       
+    }
+   
 }

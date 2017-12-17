@@ -8,12 +8,12 @@
 <%@page import="moviesapp.moviesdatabase"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link type = "text/css" rel ="stylesheet" href="CSS/index.css" > 
+<link type = "text/css" rel ="stylesheet" href="CSS/index1.css" > 
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Register Page</title>
+        <title>Register</title>
          <div class="topnav" id="myTopnav">
         <a href="index.jsp">Home</a>
         <a class="active" href="RegisterForm.jsp">Register</a>
@@ -33,6 +33,7 @@
             }
         </script>    
     </head>
+    <center>
     <body>
         <h1>Register for an account</h1>
         <form name="RegisterForm" action="Registering.jsp" onsubmit="return check()" method="POST">           
@@ -64,4 +65,5 @@
             <input type="submit" value="Register" name="register" />
         </form>
     </body>
+    </center>
 </html>
