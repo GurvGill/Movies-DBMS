@@ -36,6 +36,7 @@ public class User {
             {
                 if(rs.getString("email").equals(in_email))
                 {
+                    id = rs.getInt("id");
                     email = rs.getString("email");
                     password = rs.getString("password");
                     first_name = rs.getString("first_name");

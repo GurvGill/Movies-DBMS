@@ -27,6 +27,8 @@
 </head>
 <center>
 <body>
+    <br>
+    <h1>Results</h1>
     <%
         moviesdatabase db = new moviesdatabase();
         Connection con = db.getConnection();

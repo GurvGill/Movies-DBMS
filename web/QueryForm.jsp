@@ -53,6 +53,7 @@
             </tbody>
         </table>
         <input type="reset" value="Reset" name="reset" />
+        <input type="hidden" value="<%=user.email%>" name="email" />
         <input type="submit" value="Submit" name="submit" />
     </form>
 </body>
