@@ -37,8 +37,13 @@
                 insertReview.setString(2,movie_id);
                 insertReview.executeUpdate();
                 
-                moviesdatabase movies = new moviesdatabase();
-                String review_id = movies.getReview_id(String);
+                String review_id = null;
+                Statement statement2 = con.createStatement();
+                ResultSet rs2 = statement2.executeQuery("select * from Reviews where review = '" + review + "'"); 
+                while (rs2.next()) {
+                    review_id = ""+rs2.getInt("Review_id");
+                }
+                
                 
                 PreparedStatement insertReviewandAccount = con.prepareStatement("INSERT INTO Accounts_has_Reviews (Accounts_id, Review_id)" + " VALUES (?,?)");
                 insertReviewandAccount.setString(1,""+user.id);
