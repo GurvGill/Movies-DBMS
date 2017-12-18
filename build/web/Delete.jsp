@@ -20,10 +20,9 @@
         %>
     
     <div class="topnav" id="myTopnav">
-        <a href="index.jsp?email=<%=user.email%>">Home</a>       
-        <a href="LoggedInUser.jsp?email=<%=user.email%>">Profile</a>
-        <a href="QueryForm.jsp?email=<%=user.email%>">Search</a>
-        <a href="LogOut.jsp">Log out</a>
+        <a href="index.jsp">Home</a>
+        <a href="RegisterForm.jsp">Register</a>
+        <a href="LoginForm.jsp">Login</a>
     </div>
 </head>
 <center>

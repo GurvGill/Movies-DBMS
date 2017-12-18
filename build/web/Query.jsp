@@ -42,7 +42,13 @@
                 while (rs.next()) {
                     String movie_id = ""+rs.getInt("id");
                     Statement s = con.createStatement();
-                    ResultSet r = s.executeQuery("select * from Accounts, Reviews, Movies, MovieReviews, Accounts_has_Reviews where Accounts.id = Accounts_has_Reviews.Accounts_id and Accounts_has_Reviews.Review_id = Reviews.Review_id and Reviews.Review_id = MovieReviews.Review_id and Movies.id = MovieReviews.Movies_id and MovieReviews.Movies_id = '" + movie_id + "'order by Reviews.Review_id desc limit 3");
+                    ResultSet r = s.executeQuery("select * from Accounts, Reviews, Movies,"
+                            + " MovieReviews, Accounts_has_Reviews where Accounts.id = Accounts_has_Reviews.Accounts_id "
+                            + "and Accounts_has_Reviews.Review_id = Reviews.Review_id "
+                            + "and Reviews.Review_id = MovieReviews.Review_id "
+                            + "and Movies.id = MovieReviews.Movies_id "
+                            + "and MovieReviews.Movies_id = '" + movie_id 
+                            + "'order by Reviews.Review_id desc limit 3");
     %> 
     <table border="1">
         <tbody>
@@ -97,22 +103,18 @@
     <br>           
     <%
         }
-    } else if (column_name.equals("*") && (table_name.equals("Directors") || table_name.equals("Actors") || table_name.equals("Producers"))) {
+    } else if (column_name.equals("*") && ((table_name.equals("Directors") || table_name.equals("Actors") || table_name.equals("Producers")))) {
         while (rs.next()) {
     %>
     <table border="1">
         <tbody>
             <tr>
-                <td>ID: </td>
-                <td><%out.println(rs.getString("id")); %></td>
-            </tr>
-            <tr>
                 <td>First Name: </td>
-                <td><%out.println(rs.getString("first name")); %></td>
+                <td><%out.println(rs.getString("first_name")); %></td>
             </tr>
             <tr>
                 <td>Last Name: </td>
-                <td><%out.println(rs.getString("last name")); %></td>
+                <td><%out.println(rs.getString("last_name")); %></td>
             </tr>
         </tbody>
     </table>
@@ -124,10 +126,6 @@
     %>
     <table border="1">
         <tbody>
-            <tr>
-                <td>ID: </td>
-                <td><%out.println(rs.getString("id")); %></td>
-            </tr>
             <tr>
                 <td>Genre Type: </td>
                 <td><%out.println(rs.getString("name")); %></td>
@@ -230,16 +228,12 @@
     <table border="1">
         <tbody>
             <tr>
-                <td>id: </td>
-                <td><%out.println(rs.getString("id")); %></td>
-            </tr>
-            <tr>
-                <td>Year of Release: </td>
+                <td>First Name: </td>
                 <td><%out.println(rs.getString("first_name")); %></td>
             </tr>
 
             <tr>
-                <td>Rating: </td>
+                <td>Last Name: </td>
                 <td><%out.println(rs.getString("last_name")); %></td>
             </tr>
 

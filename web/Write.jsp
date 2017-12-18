@@ -32,7 +32,8 @@
                     genre = rs.getString("genre");
                     length = rs.getString("length");
                 } 
-                PreparedStatement insertReview = con.prepareStatement("INSERT INTO Reviews (Review, Movie_id)" + " VALUES (?,?)");
+                PreparedStatement insertReview = con.prepareStatement("INSERT INTO Reviews (Review, Movie_id)" 
+                        + " VALUES (?,?)");
                 insertReview.setString(1,review);
                 insertReview.setString(2,movie_id);
                 insertReview.executeUpdate();
@@ -45,12 +46,16 @@
                 }
                 
                 
-                PreparedStatement insertReviewandAccount = con.prepareStatement("INSERT INTO Accounts_has_Reviews (Accounts_id, Review_id)" + " VALUES (?,?)");
+                PreparedStatement insertReviewandAccount = con.prepareStatement("INSERT INTO Accounts_has_Reviews "
+                        + "(Accounts_id, Review_id)"
+                        + " VALUES (?,?)");
                 insertReviewandAccount.setString(1,""+user.id);
                 insertReviewandAccount.setString(2,review_id);
                 insertReviewandAccount.executeUpdate();
 
-                PreparedStatement insertReviewandMovie = con.prepareStatement("INSERT INTO MovieReviews (Movies_id, Review_id)" + " VALUES (?,?)");
+                PreparedStatement insertReviewandMovie = con.prepareStatement("INSERT INTO MovieReviews "
+                        + "(Movies_id, Review_id)" 
+                        + " VALUES (?,?)");
                 insertReviewandMovie.setString(1,movie_id);
                 insertReviewandMovie.setString(2,review_id);
                 insertReviewandMovie.executeUpdate();

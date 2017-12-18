@@ -19,7 +19,8 @@ public class Accounts{
          moviesdatabase db = new moviesdatabase();
          Connection con = db.getConnection();
          Statement statement = con.createStatement();
-         insertAccounts = con.prepareStatement("INSERT INTO Accounts (email, first_name, last_name, password, time)" + " VALUES (?, ?, ?, ?, ?)");
+         insertAccounts = con.prepareStatement("INSERT INTO Accounts "
+                 + "(email, first_name, last_name, password, time)" + " VALUES (?, ?, ?, ?, ?)");
         }catch(SQLException e)
         {
             e.printStackTrace();

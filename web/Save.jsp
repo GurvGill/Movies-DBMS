@@ -32,7 +32,8 @@
                     length = rs1.getString("length");
                 }
                 
-            PreparedStatement save = con.prepareStatement("INSERT INTO Accounts_Save_Movies (Accounts_id, Movies_id)" + " VALUES(?,?)");
+            PreparedStatement save = con.prepareStatement("INSERT INTO Accounts_Save_Movies (Accounts_id, Movies_id)" 
+                    + " VALUES(?,?)");
             save.setString(1,""+user.id);
             save.setString(2,movie_Id);
             save.executeUpdate();
@@ -49,6 +50,27 @@
     </head>
     <center>
     <body>
+        <h1> Welcome, <%=user.first_name + " " + user.last_name %> </h1>
+        <form name="SettingsForm" action="SettingsForm.jsp">
+        <table border="0">
+            <tbody>
+                <tr>
+                    <td>Email:</td>
+                    <td> <%=user.email%> </td>
+                </tr>
+                <tr>
+                    <td>First Name:</td>
+                    <td><%=user.first_name%></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><%=user.last_name%></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="SettingsForm.jsp?email=<%=user.email%>">Edit Settings</a>
+        <a href="ConfirmDelete.jsp?email=<%=user.email%>">Delete my Account</a>
+        </form>
         <h1>Saved Movies</h1>
         <%
             Statement statement = con.createStatement();
@@ -103,7 +125,6 @@
                         <tr>
                             <td>Save or Review: </td>
                             <td> 
-                            <button/> <a class = "button" href="Save.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Save</a></button> 
                             <button/> <a class = "button" href="AddReview.jsp?movie_id=<%=rs.getInt("id")%>&email=<%=user.email%>"/>Add Review</a></button> </td>
                         </tr>
                     </tbody>
