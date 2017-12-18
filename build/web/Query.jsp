@@ -156,7 +156,7 @@
             }
         }
     } else if(table_name.equals("Movies")){ 
-    ResultSet rs = statement.executeQuery("select * from " + table_name + " where title = '" + column_name + "'");
+    ResultSet rs = statement.executeQuery("select * from " + table_name + " where title like '%" + column_name + "%' or year like '%" + column_name + "%' or rating like '%" + column_name + "%'or genre like '%" + column_name + "%'or length like '%" + column_name + "%'");
     while(rs.next()){    
         String movie_id = ""+rs.getInt("id");
         Statement s = con.createStatement();
@@ -217,8 +217,14 @@
     <%}
     
     }else{
-
-        ResultSet rs = statement.executeQuery("select * from " + table_name + " where first_name = '" + column_name + "'");
+        ResultSet rs = null;
+        if(table_name.equals("Theaters") || table_name.equals("Genres"))
+        {
+            rs = statement.executeQuery("select * from " + table_name + " where name like '%" + column_name + "%'");
+        }
+        else if(!table_name.equals("Theaters") || !table_name.equals("Genres")){
+            rs = statement.executeQuery("select * from " + table_name + " where first_name like '%" + column_name + "%' or last_name like '%" + column_name + "%'");
+        }
         while (rs.next()) {
     %>  
     <table border="1">

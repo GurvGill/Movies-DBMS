@@ -51,6 +51,9 @@ and open the template in the editor.
  text-align: center;
 }
 
+a {
+    color: white;
+}
 /*  sets the back ground to the image */
 body {
     background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/scrolling-film-strip-3-transparent-alpha-channel-loop_-1_ih8dxs__F0000.png")no-repeat center center;
